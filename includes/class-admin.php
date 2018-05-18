@@ -25,7 +25,11 @@ Class Admin {
 	}
 
 	public function page() {
-		var_dump(plugin_dir_path( __FILE__ ) . 'views/technical-dashboard.php');
+		echo '<pre>';
+		$opcache = opcache_get_status();
+		var_dump( $opcache ); echo '</pre>';
+		$extensions = get_loaded_extensions();
+
 		require plugin_dir_path( __FILE__ ) . '../views/technical-dashboard.php';
 	}
 
